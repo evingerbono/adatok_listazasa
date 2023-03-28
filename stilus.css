@@ -1,7 +1,35 @@
-*{
+* {
     box-sizing: border-box;
 }
-main{
+
+main {
+    border: 1px solid rgb(102, 101, 101);
     max-width: 900px;
     margin: auto;
+}
+input{
+    margin: 2px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid rgb(80, 79, 79);
+}
+
+th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+footer{
+    border-top: 1px solid black;
+    text-align: center;
 }
