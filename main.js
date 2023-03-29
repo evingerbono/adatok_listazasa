@@ -60,19 +60,19 @@ $(function () {
 
 function megjelenit(lista) {
     let txt = "";
-    txt += "<table>";
+    txt += "<table class='table table-bordered'>";
     txt += "<tr>";
     for (let kulcs in lista[0]) {
-        txt += "<th>" + kulcs + "</th>";
+        txt += "<th class='table-dark'>" + kulcs + "</th>";
     }
-    txt += "<th></th>";
+    txt += "<th class='table-dark'></th>";
     txt += "</tr>";
     for (let index = 0; index < lista.length; index++) {
         txt += "<tr>";
         for (let kulcs in lista[index]) {
             txt += "<td>" + lista[index][kulcs] + "</td>";
         }
-        txt += "<td>X</td>";
+        txt += "<td class='text-danger'y>X</td>";
         txt += "</tr>";
     }
     txt += "</table>";
