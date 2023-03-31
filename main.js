@@ -10,7 +10,7 @@ $(function () {
     console.log(ADATLISTA);
     console.log(szures(ADATLISTA, "fajta", "keverék"));
 
-    const TABLAZATELEM = $("article");
+    const TABLAZATELEM = $("#admin");
     const NEVINPUTELEM = $("#nev");
     const KORINPUTELEM = $("#kor");
     const FAJTAINPUTELEM = $("#fajta");
@@ -30,6 +30,17 @@ $(function () {
         let ujTartalom = megjelenit(ADATLISTA);
         tablaElem.replaceWith(ujTartalom);
     });
+
+    $(".torol").on("click", function(){
+        let index=(event.target.id);
+        let hely =index+++1;
+        console.log(hely);
+        let ujLista =ADATLISTA.splice(hely);
+        let tablaElem = $("table");
+        let ujTartalom = megjelenit(ujLista);
+        tablaElem.replaceWith(ujTartalom);
+    });
+
 
     NEVINPUTELEM.on("input", function () {
         let nevErtek = NEVINPUTELEM.val();
@@ -72,7 +83,7 @@ function megjelenit(lista) {
         for (let kulcs in lista[index]) {
             txt += "<td>" + lista[index][kulcs] + "</td>";
         }
-        txt += "<td class='text-danger'y>X</td>";
+        txt += "<td class='torol' id='" + index + "'>X</td>";
         txt += "</tr>";
     }
     txt += "</table>";
