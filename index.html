@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="container">
         <header>
             <h1>Adatok listázása</h1>
         </header>
@@ -26,7 +26,15 @@
                 </ul>
             </div>
         </nav>
-        <section>
+        <aside id="felvitel" class="border container">
+            <h1>Adat felvitel</h1>
+            <input type="text" id="nev" placeholder="név" name="nev">
+            <input type="number" id="kor" placeholder="pl:>12..12>" name="kor">
+            <input type="text" id="fajta" placeholder="fajta" name="fajta">
+            <a href=# class='btn btn-primary'>Küldés</a>
+        </aside>
+        <section class="border container">
+            <h1>Szűrés</h1>
             <input type="text" id="nev" placeholder="név" name="nev">
             <input type="text" id="kor" placeholder="pl:>12..12>" name="kor">
             <input type="text" id="fajta" placeholder="fajta" name="fajta">

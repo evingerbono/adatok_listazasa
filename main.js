@@ -14,12 +14,15 @@ $(function () {
     const NEVINPUTELEM = $("#nev");
     const KORINPUTELEM = $("#kor");
     const FAJTAINPUTELEM = $("#fajta");
+    const ADAFELVITEL = $("#felvitel");
 
 
     let tartalom = megjelenit(ADATLISTA);
     TABLAZATELEM.append(tartalom);
 
+    ADAFELVITEL.on(function(){
 
+    });
     $("th").on("click", function () {
         let index = $(this).index();
         let kulcs = Object.keys(ADATLISTA[0])[index];

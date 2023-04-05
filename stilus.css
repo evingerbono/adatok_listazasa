@@ -4,8 +4,9 @@
 
 main {
     border: 1px solid rgb(102, 101, 101);
-    max-width: 900px;
+  /*   max-width: 900px;
     margin: auto;
+    padding: 2px; */
 }
 header{
     text-align: center;
