@@ -31,14 +31,10 @@ $(function () {
         tablaElem.replaceWith(ujTartalom);
     });
 
-    $(".torol").on("click", function(){
-        let index=(event.target.id);
-        let hely =index+++1;
-        console.log(hely);
-        let ujLista =ADATLISTA.splice(hely);
-        let tablaElem = $("table");
-        let ujTartalom = megjelenit(ujLista);
-        tablaElem.replaceWith(ujTartalom);
+    $(".torol").on("click", function () {
+        let index = (event.target.id);
+        $(this).closest("tr").remove();
+        ADATLISTA.splice(index, 1);
     });
 
 
@@ -89,4 +85,3 @@ function megjelenit(lista) {
     txt += "</table>";
     return txt;
 }
-
