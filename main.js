@@ -14,15 +14,12 @@ $(function () {
     const NEVINPUTELEM = $("#nev");
     const KORINPUTELEM = $("#kor");
     const FAJTAINPUTELEM = $("#fajta");
-    const ADAFELVITEL = $("#felvitel");
-
-
+    const ADAFELVITEL = $("#kuldes");
+    
     let tartalom = megjelenit(ADATLISTA);
     TABLAZATELEM.append(tartalom);
 
-    ADAFELVITEL.on(function(){
 
-    });
     $("th").on("click", function () {
         let index = $(this).index();
         let kulcs = Object.keys(ADATLISTA[0])[index];
@@ -40,8 +37,19 @@ $(function () {
         ADATLISTA.splice(index, 1);
     });
 
+    ADAFELVITEL.on("click",function () {
+        const ujAdat = {
+            nev: NEVINPUTELEM.val(),
+            kor: KORINPUTELEM.val(),
+            fajta: FAJTAINPUTELEM.val(),
+        };
+        ADATLISTA.push(ujAdat);
+        let tartalom = megjelenit(ADATLISTA);
+        TABLAZATELEM.html(tartalom);
+    });
 
-    NEVINPUTELEM.on("input", function () {
+
+     NEVINPUTELEM.on("input", function () {
         let nevErtek = NEVINPUTELEM.val();
         let szurtlista = szures(ADATLISTA, "nev", nevErtek);
         console.log(szurtlista);
