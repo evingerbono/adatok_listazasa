@@ -15,7 +15,7 @@ $(function () {
     const KORINPUTELEM = $("#kor");
     const FAJTAINPUTELEM = $("#fajta");
     const ADAFELVITEL = $("#kuldes");
-    
+
     let tartalom = megjelenit(ADATLISTA);
     TABLAZATELEM.append(tartalom);
 
@@ -37,7 +37,7 @@ $(function () {
         ADATLISTA.splice(index, 1);
     });
 
-    ADAFELVITEL.on("click",function () {
+    ADAFELVITEL.on("click", function () {
         const ujAdat = {
             nev: NEVINPUTELEM.val(),
             kor: KORINPUTELEM.val(),
@@ -49,7 +49,7 @@ $(function () {
     });
 
 
-     NEVINPUTELEM.on("input", function () {
+    NEVINPUTELEM.on("input", function () {
         let nevErtek = NEVINPUTELEM.val();
         let szurtlista = szures(ADATLISTA, "nev", nevErtek);
         console.log(szurtlista);
