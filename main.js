@@ -10,10 +10,13 @@ $(function () {
     console.log(ADATLISTA);
     console.log(szures(ADATLISTA, "fajta", "keverék"));
 
+    const NEVINPUTELEMSZ = $("#nev");
+    const KORINPUTELEMSZ = $("#kor");
+    const FAJTAINPUTELEMSZ = $("#fajta");
     const TABLAZATELEM = $("#admin");
-    const NEVINPUTELEM = $("#nev");
-    const KORINPUTELEM = $("#kor");
-    const FAJTAINPUTELEM = $("#fajta");
+    const NEVINPUTELEM = $("#nev2");
+    const KORINPUTELEM = $("#kor2");
+    const FAJTAINPUTELEM = $("#fajta2");
     const ADAFELVITEL = $("#kuldes");
 
     let tartalom = megjelenit(ADATLISTA);
@@ -40,16 +43,19 @@ $(function () {
     ADAFELVITEL.on("click", function () {
         const ujAdat = {
             nev: NEVINPUTELEM.val(),
-            kor: KORINPUTELEM.val(),
             fajta: FAJTAINPUTELEM.val(),
+            kor: KORINPUTELEM.val()
         };
         ADATLISTA.push(ujAdat);
+        console.log(NEVINPUTELEM.val());
+        console.log(ujAdat);
+        console.log(ADATLISTA);
         let tartalom = megjelenit(ADATLISTA);
         TABLAZATELEM.html(tartalom);
     });
 
 
-    NEVINPUTELEM.on("input", function () {
+    NEVINPUTELEMSZ.on("input", function () {
         let nevErtek = NEVINPUTELEM.val();
         let szurtlista = szures(ADATLISTA, "nev", nevErtek);
         console.log(szurtlista);
@@ -57,7 +63,7 @@ $(function () {
         $("table").replaceWith(tartalom);
     });
 
-    KORINPUTELEM.on("input", function () {
+    KORINPUTELEMSZ.on("input", function () {
         let korErtek = KORINPUTELEM.val();
         let szurtlista = szures(ADATLISTA, "kor", korErtek);
         console.log(szurtlista);
@@ -65,7 +71,7 @@ $(function () {
         $("table").replaceWith(tartalom);
     });
 
-    FAJTAINPUTELEM.on("input", function () {
+    FAJTAINPUTELEMSZ.on("input", function () {
         let fajtaErtek = FAJTAINPUTELEM.val();
         let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
         console.log(szurtlista);
