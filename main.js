@@ -56,7 +56,7 @@ $(function () {
 
 
     NEVINPUTELEMSZ.on("input", function () {
-        let nevErtek = NEVINPUTELEM.val();
+        let nevErtek = NEVINPUTELEMSZ.val();
         let szurtlista = szures(ADATLISTA, "nev", nevErtek);
         console.log(szurtlista);
         let tartalom = megjelenit(szurtlista);
@@ -64,7 +64,7 @@ $(function () {
     });
 
     KORINPUTELEMSZ.on("input", function () {
-        let korErtek = KORINPUTELEM.val();
+        let korErtek = KORINPUTELEMSZ.val();
         let szurtlista = szures(ADATLISTA, "kor", korErtek);
         console.log(szurtlista);
         let tartalom = megjelenit(szurtlista);
@@ -72,7 +72,7 @@ $(function () {
     });
 
     FAJTAINPUTELEMSZ.on("input", function () {
-        let fajtaErtek = FAJTAINPUTELEM.val();
+        let fajtaErtek = FAJTAINPUTELEMSZ.val();
         let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
         console.log(szurtlista);
         let tartalom = megjelenit(szurtlista);

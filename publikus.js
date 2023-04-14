@@ -8,6 +8,7 @@ $(function () {
     $(".nagyit").on("click", function () {
         let index = (event.target.id);
         console.log(index);
+        //Modal//
         
     });
 
@@ -19,9 +20,9 @@ function megjelenit(lista) {
         txt +=  "<div class='card col-sm-4' >";
         txt += "<div class='card-body'>";
         for (let kulcs in lista[index]) {
-            txt += "<h1 class='card-title'>" + lista[index][kulcs] + "</h1>";
+            txt += "<h3 class='card-title'>" + lista[index][kulcs] + "</h3>";
         }
-        txt+="<a href=# class='btn btn-primary nagyit' id='" + index + "'>Mutat</a>";
+        txt+="<a href=# class='nagyit btn btn-primary' id='" + index + "'>Mutat</a>";
         txt += "</div>";
         txt += "</div>";
     }
