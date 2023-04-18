@@ -20,14 +20,35 @@
         </header>
         <nav class="navbar navbar-expand-sm bg-light">
             <div class="container-fluid">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Admin oldal</a></li>
-                    <li class="nav-item"><a class="nav-link" href="publikus.html">Publikus oldal</a></li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Admin oldal</a></li>
+                        <li class="nav-item"><a class="nav-link" href="publikus.html">Publikus oldal</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <article id="publik" class="row container">
-
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Adatok</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modal-tartalom"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </article>
         <footer>
             Evinger Bono

@@ -6,18 +6,14 @@ $(function () {
     CARDELEM.append(tartalom);
 
     $(".nagyit").on("click", function () {
-        let index = (event.target.id);
-        console.log(index);
-        //Modal//
-        {/* <div class="modal" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                            megjelenit(ADATLISTA);
-                    </div>
-                </div>
-            </div>
-        </div> */}
+        let index = event.target.id;
+        let adat = ADATLISTA[index];
+        let modalTartalom = "";
+        for (let kulcs in adat) {
+            modalTartalom += "<p><strong>" + kulcs + ": </strong>" + adat[kulcs] + "</p>";
+        }
+        $("#modal-tartalom").html(modalTartalom);
+        $("#myModal").modal("show");
 
     });
 
@@ -29,7 +25,11 @@ function megjelenit(lista) {
         txt += "<div class='card col-sm-4' >";
         txt += "<div class='card-body'>";
         for (let kulcs in lista[index]) {
-            txt += "<h3 class='card-title'>" + lista[index][kulcs] + "</h3>";
+            if (kulcs === "nev") {
+                txt += "<h3 class='card-title'>" + lista[index][kulcs] + "</h3>";
+            } else {
+                txt += "<p>" + lista[index][kulcs] + "</p>";
+            }
         }
         txt += "<a href=# class='nagyit btn btn-primary' data-bs-toggle='modal' data-bs-target='#myModal' id='" + index + "'>Mutat</a>";
         txt += "</div>";
