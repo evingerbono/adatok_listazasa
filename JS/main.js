@@ -7,9 +7,6 @@ $(function () {
     rendezes(ADATLISTA, "nev");
     rendezes(ADATLISTA, "fajta");
 
-    console.log(ADATLISTA);
-    console.log(szures(ADATLISTA, "fajta", "keverék"));
-
     const NEVINPUTELEMSZ = $("#nev");
     const KORINPUTELEMSZ = $("#kor");
     const FAJTAINPUTELEMSZ = $("#fajta");
@@ -38,6 +35,8 @@ $(function () {
         let index = (event.target.id);
         $(this).closest("tr").remove();
         ADATLISTA.splice(index, 1);
+        megjelenit(ADATLISTA);
+        console.log(ADATLISTA);
     });
 
     ADAFELVITEL.on("click", function () {
