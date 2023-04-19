@@ -18,6 +18,7 @@ $(function () {
 
     let tartalom = megjelenit(ADATLISTA);
     TABLAZATELEM.append(tartalom);
+    validalas();
 
 
     $("th").on("click", function () {
@@ -52,6 +53,7 @@ $(function () {
         let tartalom = megjelenit(ADATLISTA);
         TABLAZATELEM.html(tartalom);
     });
+
 
 
     NEVINPUTELEMSZ.on("input", function () {
@@ -100,4 +102,23 @@ function megjelenit(lista) {
     }
     txt += "</table>";
     return txt;
+}
+
+function validalas(){
+    let kuldheto = true;
+    let hibauzenet = "";
+    var filter ="/^[A-Z][a-zA-Z]{2,}$/";
+  if (filter.test(NEVINPUTELEMSZ.value)) {
+    adatObj.nev = NEVINPUTELEMSZ.value;
+    document.querySelector("#nevhiba").innerHTML = "";
+    kuldheto = true;
+  } else {
+    kuldheto = false;
+    hibauzenet = "A név hiányzik, vagy a formátuma hibás!";
+    document.querySelector("#nevhiba").innerHTML = hibauzenet;
+}
+console.log(kuldheto)
+  if (kuldheto) {
+    urlapAdatokKuldese(adatObj);
+  }
 }
