@@ -104,21 +104,31 @@ function megjelenit(lista) {
     return txt;
 }
 
-function validalas(){
-    let kuldheto = true;
-    let hibauzenet = "";
-    var filter ="/^[A-Z][a-zA-Z]{2,}$/";
-  if (filter.test(NEVINPUTELEMSZ.value)) {
-    adatObj.nev = NEVINPUTELEMSZ.value;
-    document.querySelector("#nevhiba").innerHTML = "";
-    kuldheto = true;
-  } else {
-    kuldheto = false;
-    hibauzenet = "A név hiányzik, vagy a formátuma hibás!";
-    document.querySelector("#nevhiba").innerHTML = hibauzenet;
-}
-console.log(kuldheto)
-  if (kuldheto) {
-    urlapAdatokKuldese(adatObj);
-  }
+function validalas() {
+    $("#kuldes").on("click", function () {
+        let nevErtek = $("#nev2").val();
+        let korErtek = $("#kor2").val();
+        let fajtaErtek = $("#fajta2").val();
+
+        let nevRegex = /^[a-zA-Z]*$/;
+        let korRegex = /^[0-9]{1,2}$|^20$/;
+        let fajtaRegex = /^[a-zA-Z]*$/;
+
+        if (!nevRegex.test(nevErtek)) {
+            alert("A név csak betűket tartalmazhat!");
+            return false;
+        }
+
+        if (!korRegex.test(korErtek)) {
+            alert("A kor csak egy vagy két számjegy lehet, vagy 20!");
+            return false;
+        }
+
+        if (!fajtaRegex.test(fajtaErtek)) {
+            alert("A fajta csak betűket tartalmazhat!");
+            return false;
+        }
+        
+        return true;
+    });
 }
