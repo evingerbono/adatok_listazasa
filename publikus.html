@@ -18,10 +18,10 @@
         <header>
             <h1>Adatok listázása</h1>
         </header>
-        <nav class="navbar navbar-expand-sm bg-light">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content" id="navbarNav">
@@ -38,16 +38,18 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Kutya Adatok</h5>
+                            <button type="button" class="btn btn-secondary float-end" data-bs-dismiss="modal">Bezárás</button>
                         </div>
                         <div class="modal-body">
                             <p id="modal-tartalom"></p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+                            <button type="button" class="btn btn-secondary float-start" id="balra">Balra</button>
+                            <button type="button" class="btn btn-secondary float-end" id="jobbra">Jobbra</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </article>
         <footer>
             Evinger Bono

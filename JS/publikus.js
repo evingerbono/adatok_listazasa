@@ -15,6 +15,30 @@ $(function () {
         $("#modal-tartalom").html(modalTartalom);
         $("#myModal").modal("show");
 
+        $("#balra").on("click", function () {
+            if (index > 0) {
+                index--;
+                let adat = ADATLISTA[index];
+                let modalTartalom = "";
+                for (let kulcs in adat) {
+                    modalTartalom += "<p><strong>" + kulcs + ": </strong>" + adat[kulcs] + "</p>";
+                }
+                $("#modal-tartalom").html(modalTartalom);
+            }
+        });
+
+        $("#jobbra").on("click", function () {
+            if (index < ADATLISTA.length - 1) {
+                index++;
+                let adat = ADATLISTA[index];
+                let modalTartalom = "";
+                for (let kulcs in adat) {
+                    modalTartalom += "<p><strong>" + kulcs + ": </strong>" + adat[kulcs] + "</p>";
+                }
+                $("#modal-tartalom").html(modalTartalom);
+            }
+
+        });
     });
 
 })
